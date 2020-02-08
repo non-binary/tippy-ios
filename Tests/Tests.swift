@@ -7,8 +7,11 @@
 //
 
 import XCTest
-@testable import Project
+@testable import Tippy
 
 class Tests: XCTestCase {
-
+    func testCompute() {
+        let result = Compute.percentage(20, from: 15)
+        assert(result == 3.00, "20% of $15 is $3.00")
+    }
 }
