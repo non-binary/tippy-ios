@@ -9,35 +9,36 @@
 import XCTest
 
 class UITests: XCTestCase {
-
+    // MARK: Properties
+    var app: XCUIApplication!
+    
+    // MARK: Test Lifecycle
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+    // MARK: Tests
+    func testElementsExist() {
+        assert(app.textFields["25"].exists, "Bill total text field exists")
+        assert(app.staticTexts["Bill Total"].exists, "Bill total explainer label exists")
+        assert(app.textFields["15"].exists, "Percentage text field exists")
+        assert(app.staticTexts["Percentage"].exists, "Percentage explainer label exists")
+        assert(app.staticTexts["Zilch"].exists, "Zilch label exists")
+        assert(app.staticTexts["Proposed Tip"].exists, "Proposed Tip explainer label exists")
+    }
+    
+    func testComputeTip() {
+        app = XCUIApplication()
+        let billTextField = app.textFields["25"]
+        billTextField.tap()
+        billTextField.typeText("50")
+        
+        let percentageTextField = app.textFields["15"]
+        percentageTextField.doubleTap()
+        percentageTextField.typeText("20")
+        
+        assert(app.staticTexts["10.00"].label == "10.00", "Computed tip successfully")
     }
 }
