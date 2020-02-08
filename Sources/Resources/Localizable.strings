@@ -6,4 +6,9 @@
   Copyright © 2020 Luna Graysen. All rights reserved.
 */
 
-"hello-world" = "Hello World!";
+"amount_text_field_placeholder" = "25";
+"amount_label" = "Bill Total";
+"percentage_text_field_placeholder" = "15";
+"percentage_label" = "Percentage";
+"result_label_default" = "Zilch";
+"proposed_tip_label" = "Proposed Tip";
