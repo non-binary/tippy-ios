@@ -9,7 +9,6 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
     // MARK: Properties
     var calculatorView: CalculatorView?
     
@@ -42,12 +41,12 @@ class CalculatorViewController: UIViewController {
         
         guard let total = Float(totalString), let percentage = Float(percentageString) else {
             print("Strings could not be converted to number types")
-            calculatorView.resultLabel?.text = LocalizedString("result_label_default")
+            calculatorView.resultLabel?.text = LocalizedString("result_label_placeholder")
             
             return
         }
         
-        let result = Result.compute(resultWith: total, percentage: percentage)
-        calculatorView.resultLabel?.text = Result.format(result: result)
+        let result = Compute.percentage(percentage, from: total)
+        calculatorView.resultLabel?.text = String(format: "%.2f", result)
     }
 }

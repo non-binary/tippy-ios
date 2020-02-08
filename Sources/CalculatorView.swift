@@ -9,7 +9,6 @@
 import UIKit
 
 class CalculatorView: UIView {
-    
     // MARK: Properties
     var amountTextField: UITextField?
     var percentageTextField: UITextField?
@@ -18,32 +17,27 @@ class CalculatorView: UIView {
     // MARK: Initialize View
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        self.setupView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setupLayout()
+        self.setupView()
     }
     
-    func setupLayout() {
-        let largeTitle = UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: UIFont.systemFont(ofSize: 60, weight: .bold))
-
-        // Amount Text Field
-        let amountTextField = UITextField(frame: .zero)
-        amountTextField.translatesAutoresizingMaskIntoConstraints = false
+    func setupView() {
+        // Input field for amount of $ spent.
+        let amountTextField = InputTextField(frame: .zero)
         amountTextField.placeholder = LocalizedString("amount_text_field_placeholder")
-        amountTextField.font = largeTitle
-        amountTextField.adjustsFontForContentSizeCategory = true
-        amountTextField.textAlignment = .center
-        amountTextField.keyboardType = .decimalPad
         self.amountTextField = amountTextField
         addSubview(amountTextField)
         
         amountTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         amountTextField.topAnchor.constraint(equalTo: topAnchor, constant: 125).isActive = true
         
-        // Amount "Explainer" Label
+        // Explainer label.
         let amountLabel = UILabel(frame: .zero)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
@@ -53,21 +47,16 @@ class CalculatorView: UIView {
         amountLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         amountLabel.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 15).isActive = true
         
-        // Percentage Text Field
-        let percentageTextField = UITextField(frame: .zero)
-        percentageTextField.translatesAutoresizingMaskIntoConstraints = false
+        // Input field for percentage of tip.
+        let percentageTextField = InputTextField(frame: .zero)
         percentageTextField.placeholder = LocalizedString("percentage_text_field_placeholder")
-        percentageTextField.font = largeTitle
-        percentageTextField.adjustsFontForContentSizeCategory = true
-        percentageTextField.textAlignment = .center
-        percentageTextField.keyboardType = .numberPad
         self.percentageTextField = percentageTextField
         addSubview(percentageTextField)
         
         percentageTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         percentageTextField.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: 40).isActive = true
         
-        // Percentage "Explainer" Label
+        // Explainer label.
         let percentageLabel = UILabel(frame: .zero)
         percentageLabel.translatesAutoresizingMaskIntoConstraints = false
         percentageLabel.text = LocalizedString("percentage_label")
@@ -77,12 +66,11 @@ class CalculatorView: UIView {
         percentageLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         percentageLabel.topAnchor.constraint(equalTo: percentageTextField.bottomAnchor, constant: 15).isActive = true
         
-        // Result Label
+        // Output for amount of tip.
         let resultLabel = UILabel(frame: .zero)
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
-        resultLabel.font = largeTitle
+        resultLabel.font = UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: UIFont.systemFont(ofSize: 60, weight: .bold))
         resultLabel.adjustsFontForContentSizeCategory = true
-        //60,112,185
         resultLabel.textColor = UIColor(red: 60/255, green: 112/255, blue: 185/255, alpha: 1.0)
         resultLabel.text = LocalizedString("result_label_default")
         self.resultLabel = resultLabel
@@ -91,7 +79,7 @@ class CalculatorView: UIView {
         resultLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         resultLabel.topAnchor.constraint(equalTo: percentageLabel.bottomAnchor, constant: 40).isActive = true
         
-        // Proposed Tip "Explainer" Label
+        // Explainer label.
         let proposedTipLabel = UILabel(frame: .zero)
         proposedTipLabel.translatesAutoresizingMaskIntoConstraints = false
         proposedTipLabel.text = LocalizedString("proposed_tip_label")

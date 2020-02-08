@@ -10,5 +10,5 @@
 "amount_label" = "Bill Total";
 "percentage_text_field_placeholder" = "15";
 "percentage_label" = "Percentage";
-"result_label_default" = "Zilch";
+"result_label_placeholder" = "Zilch";
 "proposed_tip_label" = "Proposed Tip";

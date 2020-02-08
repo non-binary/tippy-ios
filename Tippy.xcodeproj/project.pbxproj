@@ -15,7 +15,8 @@
 		BD9A7DF221FE1652004AF281 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9A7DF121FE1652004AF281 /* LocalizedString.swift */; };
 		BD9A7DF421FE16EE004AF281 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD9A7DF321FE16EE004AF281 /* Localizable.strings */; };
 		BDAB28FA23EE7D73002E4B12 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAB28F923EE7D73002E4B12 /* CalculatorView.swift */; };
-		BDAB28FC23EE7D90002E4B12 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAB28FB23EE7D90002E4B12 /* Result.swift */; };
+		BDAB28FC23EE7D90002E4B12 /* Compute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAB28FB23EE7D90002E4B12 /* Compute.swift */; };
+		BDAB28FE23EE806F002E4B12 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAB28FD23EE806F002E4B12 /* InputTextField.swift */; };
 		BDBCCB2A23C145A00017226E /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCCB2923C145A00017226E /* UITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,8 @@
 		BD9A7DF121FE1652004AF281 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		BD9A7DF321FE16EE004AF281 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BDAB28F923EE7D73002E4B12 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
-		BDAB28FB23EE7D90002E4B12 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BDAB28FB23EE7D90002E4B12 /* Compute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compute.swift; sourceTree = "<group>"; };
+		BDAB28FD23EE806F002E4B12 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		BDBCCB2723C1459F0017226E /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDBCCB2923C145A00017226E /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		BDBCCB2B23C145A00017226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,7 +95,8 @@
 				BD9A7DCD21FE0DC9004AF281 /* AppDelegate.swift */,
 				BD9A7DCF21FE0DC9004AF281 /* CalculatorViewController.swift */,
 				BDAB28F923EE7D73002E4B12 /* CalculatorView.swift */,
-				BDAB28FB23EE7D90002E4B12 /* Result.swift */,
+				BDAB28FB23EE7D90002E4B12 /* Compute.swift */,
+				BDAB28FD23EE806F002E4B12 /* InputTextField.swift */,
 				BD9A7DED21FE1001004AF281 /* Resources */,
 			);
 			path = Sources;
@@ -273,9 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAB28FA23EE7D73002E4B12 /* CalculatorView.swift in Sources */,
-				BDAB28FC23EE7D90002E4B12 /* Result.swift in Sources */,
+				BDAB28FC23EE7D90002E4B12 /* Compute.swift in Sources */,
 				BD9A7DD021FE0DC9004AF281 /* CalculatorViewController.swift in Sources */,
 				BD9A7DF221FE1652004AF281 /* LocalizedString.swift in Sources */,
+				BDAB28FE23EE806F002E4B12 /* InputTextField.swift in Sources */,
 				BD9A7DCE21FE0DC9004AF281 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
