@@ -72,7 +72,7 @@ class CalculatorView: UIView {
         resultLabel.font = UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: UIFont.systemFont(ofSize: 60, weight: .bold))
         resultLabel.adjustsFontForContentSizeCategory = true
         resultLabel.textColor = UIColor(red: 60/255, green: 112/255, blue: 185/255, alpha: 1.0)
-        resultLabel.text = LocalizedString("result_label_default")
+        resultLabel.text = LocalizedString("result_label_placeholder")
         self.resultLabel = resultLabel
         addSubview(resultLabel)
         
