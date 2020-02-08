@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Project
+//  Tippy
 //
-//  Created by Luna Graysen on 2020-01-04.
+//  Created by Luna Graysen on 2020-02-08.
 //  Copyright © 2020 Luna Graysen. All rights reserved.
 //
 
